@@ -1,0 +1,446 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #080808;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  position: fixed;
+
+  top: 20px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: calc(100% - 40px);
+  max-width: 1200px;
+
+  height: 64px;
+
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(20, 20, 20, 0.65);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 18px;
+
+  z-index: 100;
+}
+
+/* LOGO */
+
+.navbar-logo {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* LINKS */
+
+.navbar-links {
+  display: flex;
+  gap: 28px;
+}
+
+.navbar-links a {
+  color: #aaa;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition: 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #202020 0%,
+      #0d0d0d 45%,
+      #050505 100%
+    );
+}
+
+
+.id-frame {
+  width: 1200px;
+  height: 650px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.08),
+      rgba(255,255,255,0.025)
+    );
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  box-shadow:
+    0 30px 100px rgba(0,0,0,0.5);
+}
+
+.id-frame canvas {
+  width: 100% !important;
+  height: 100% !important;
+
+  display: block;
+}
+
+.navigation-btn {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+}
+
+/* =========================
+   EDIT PANEL
+========================= */
+
+.edit-panel {
+  position: absolute;
+
+  top: 120px;
+  right: 40px;
+
+  width: 280px;
+
+  padding: 24px;
+
+  border-radius: 18px;
+
+  background: rgba(20, 20, 20, 0.92);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  backdrop-filter: blur(20px);
+
+  color: white;
+
+  z-index: 20;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+
+/* TITLE */
+
+.edit-panel h2 {
+  margin: 0 0 20px;
+
+  font-size: 20px;
+}
+
+
+/* LABEL */
+
+.edit-panel label {
+  display: block;
+
+  margin-top: 15px;
+  margin-bottom: 7px;
+
+  font-size: 13px;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* INPUT */
+
+.edit-panel input[type="text"] {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 11px 12px;
+
+  border-radius: 9px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.06);
+
+  color: white;
+
+  font-size: 14px;
+}
+
+
+.edit-panel input[type="text"]:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* FILE INPUT */
+
+.edit-panel input[type="file"] {
+  width: 100%;
+
+  margin-top: 5px;
+
+  color: rgba(255, 255, 255, 0.6);
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   BUTTON CONTAINER
+========================= */
+
+.navigation-btn {
+  position: absolute;
+
+  bottom: 50px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+
+  flex-direction: row;
+
+  gap: 12px;
+
+  z-index: 30;
+}
+
+
+/* =========================
+   BUTTON EDIT
+========================= */
+
+.edit-btn {
+  width: 100px;
+  height: 40px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  background: rgba(25, 25, 25, 0.9);
+
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.edit-btn:hover {
+  transform: translateY(-2px);
+
+  background: rgba(45, 45, 45, 0.95);
+}
+
+/* =========================
+   BUTTON DOWNLOAD
+========================= */
+
+.download-btn {
+  --main-focus: #2d8cf0;
+  --font-color: #eee;
+  --bg-color-sub: rgba(25, 25, 25, 0.9);
+  --bg-color: rgba(20, 20, 20, 0.9);
+  --main-color: #eee;
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.download-btn, .download__icon, .download__text {
+  transition: all 0.3s;
+}
+
+.download-btn .download__text {
+  transform: translateX(22px);
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.download-btn .download__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: var(--bg-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-btn .svg {
+  width: 20px;
+  fill: var(--main-color);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  background: var(--bg-color);
+}
+
+.download-btn:hover .download__text {
+  color: transparent;
+}
+
+.download-btn:hover .download__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.download-btn:active {
+  box-shadow: 0px 0px var(--main-color);
+}
+
+/* =========================
+   BUTTON SUPPORT
+========================= */
+
+.support-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px 8px 12px;
+  box-shadow: rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  background-color: #e8e8e8;
+  border-color: #ffe2e2;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 900;
+  color: rgb(134, 124, 124);
+  font-family: monospace;
+  transition: transform 400ms cubic-bezier(.68,-0.55,.27,2.5), 
+  border-color 400ms ease-in-out,
+  background-color 400ms ease-in-out;
+  word-spacing: -2px;
+}
+
+@keyframes movingBorders {
+  0% {
+    border-color: #fce4e4;
+  }
+
+  50% {
+    border-color: #ffd8d8;
+  }
+
+  90% {
+    border-color: #fce4e4;
+  }
+}
+
+.support-btn:hover {
+  background-color: #eee;
+  transform: scale(105%);
+  animation: movingBorders 3s infinite;
+}
+
+.support-btn svg {
+  fill: rgb(255, 110, 110);
+  margin-left: 13px;
+}
+
+@keyframes beatingHeart {
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.15);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.15);
+  }
+
+  60% {
+    transform: scale(1);
+  }
+}
+
+.support-btn:hover svg {
+  transform: scale(105%);
+  border-color: #ffd8d8;
+  animation: beatingHeart 1.2s infinite;
+}
